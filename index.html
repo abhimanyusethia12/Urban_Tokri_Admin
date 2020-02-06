@@ -1,0 +1,55 @@
+<html>
+    <title>Urban Tokri Admin Portal </title>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>        
+    </head>
+    <body>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyD0hnoKIv_Q_OReFyE9WGPsSQHUAracZ6U",
+              authDomain: "ninja-firestore-tut-288bd.firebaseapp.com",
+              databaseURL: "https://ninja-firestore-tut-288bd.firebaseio.com",
+              projectId: "ninja-firestore-tut-288bd",
+              storageBucket: "ninja-firestore-tut-288bd.appspot.com",
+              messagingSenderId: "293106848686",
+              appId: "1:293106848686:web:8229d65d4203fb6a4e6e3f",
+              measurementId: "G-0WWKJ3VS4V"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore()
+            //db.settings({timestampsInSnapshots: true})
+        </script>
+        <h1>Products</h1>
+
+        <div class="content">
+
+            <form id="add-product">
+                <input type="text" name="name" placeholder="Product name">
+                <input type="text" name="source" placeholder="source name">
+                <input type="number" name="quantity" placeholder="quantity in kg">
+                <input type="text" name="stock_status" placeholder="in stock? true/false">
+                <input type="number" name="price_100g" placeholder="price per 100 grams">
+                <input type="number" name="price_250g" placeholder="price per 250 grams">
+                <input type="number" name="price_500g" placeholder="price per 500 grams">
+                <button>Add Product</button>
+            </form>   
+            <h2>Fill in Details to Update product</h2>
+            <form id="update-product">
+                <input type="number" name="up_quantity" placeholder="quantity in kg">
+                <input type="text" name="up_stock_status" placeholder="in stock? true/false">
+                <input type="number" name="up_price_100g" placeholder="price per 100 grams">
+                <input type="number" name="up_price_250g" placeholder="price per 250 grams">
+                <input type="number" name="up_price_500g" placeholder="price per 500 grams">
+            </form>
+
+            <ul id="product-list"></ul>
+
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
